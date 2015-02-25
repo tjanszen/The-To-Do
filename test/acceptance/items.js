@@ -16,6 +16,9 @@ var cookie;
 describe('items route', function() {
   beforeEach(function(done) {
     cp.execFile(__dirname + '/../scripts/clean-db.sh', [dbname], {cwd:__dirname + '/../scripts'}, function(err, stdout, stderr) {
+      console.log('********err******',err);
+      console.log('********stdout******',stdout);
+      console.log('********stderr******',stderr);
       var options = {
         method: 'post',
         url:'/authenticate',

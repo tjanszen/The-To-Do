@@ -14,7 +14,9 @@ var itemSchema = mongoose.Schema({
 });
 
 itemSchema.pre('save', function(next) {
-  this.tags = _.kebabCase(this.tags[0].toLowerCase()).split('-');
+  if(this.isNew){
+    this.tags = _.kebabCase(this.tags[0].toLowerCase()).split('-');
+  }
   next();
 });
 

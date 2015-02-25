@@ -14,7 +14,7 @@ var dbname = process.env.MONGO_URL.split('/')[3];
 
 describe('users route', function() {
   beforeEach(function(done) {
-    cp.execFile(__dirname + '/../scripts/clean-db.sh', [dbname], {cwd:__dirname + '/../scripts'}, function(err, stdout, stderr) {
+    cp.execFile(__dirname + '/../scripts/clean-db.sh', [dbname], {cwd:__dirname + '/../scripts'}, function() {
       done();
     });
   });

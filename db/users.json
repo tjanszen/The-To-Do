@@ -1,12 +1,12 @@
-{
+[{
   "_id" : {"$oid":"000000000000000000000001"},
   "email" : "e@f.g",
   "password" : "$2a$08$97N1LVo.cmFYMuv62a5P1uJFe3UrtbTkPC1R7APtllHN4Nu5GvUB2",
   "createdAt" : {"$date":1424828183438}
-}
+},
 {
   "_id" : {"$oid":"000000000000000000000002"},
   "email" : "f@g.h",
   "password" : "$2a$08$97N1LVo.cmFYMuv62a5P1uJFe3UrtbTkPC1R7APtllHN4Nu5GvUB2",
   "createdAt" : {"$date":1424828183439}
-}
+}]

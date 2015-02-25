@@ -1,4 +1,15 @@
 extends ../../layouts/master
 block content
   h3 To-Do-Items
-  .row
+  each item in items
+    .row
+      .col-xs-12
+        div Id: #{item._id}
+        div Title: #{item.title}
+        div Due: #{item.due}
+        div Created At: #{item.createdAt}
+        div Priority: #{item.priority}
+        div is Completed: #{item.isCompleted}
+        each tag in item.tags
+          div Tags:
+            span= tag

@@ -3,7 +3,6 @@
 'use strict';
 
 var expect = require('chai').expect;
-var User = require('../../server/models/user');
 var Lab = require('lab');
 var lab = exports.lab = Lab.script();
 var describe = lab.describe;
@@ -102,7 +101,6 @@ describe('users route', function() {
     });
   });
   describe('post /authenticate', function() {
-
     it('succeed and redirect to /home', function(done) {
       var options = {
         method: 'post',
@@ -119,5 +117,4 @@ describe('users route', function() {
       });
     });
   });
-
 });

@@ -17,7 +17,6 @@ describe('User', function() {
       User.register({email: 'test@test.test', password:'123'}, done);
     });
   });
-
   describe('register', function() {
     it('should register a user', function(done) {
       User.register({email: 'test2@test.test', password:'123'}, function(err, user) {
@@ -30,7 +29,6 @@ describe('User', function() {
         done();
       });
     });
-
     it('should NOT register a user - duplicate email', function(done) {
       User.register({email: 'test@test.test', password:'123'}, function(err, user) {
         expect(err).to.be.ok;
@@ -40,7 +38,6 @@ describe('User', function() {
     });
   });
   describe('authenticate', function() {
-
     it('should authenticate correct email/pw', function(done) {
       User.authenticate({email:'test@test.test', password:'123'}, function(err, user) {
         expect(err).to.not.be.ok;
@@ -49,6 +46,5 @@ describe('User', function() {
         done();
       });
     });
-
   });
 });

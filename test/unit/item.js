@@ -15,7 +15,6 @@ var cookie;
 var bob;
 require('../../server/index');
 
-
 describe('Item', function() {
   beforeEach(function(done) {
     User.remove(function() {
@@ -36,7 +35,6 @@ describe('Item', function() {
       });
     });
   });
-
   describe('constructor', function() {
     it('should create a new item', function(done) {
       var item = new Item({
@@ -54,7 +52,5 @@ describe('Item', function() {
       expect(item.createdAt).to.be.a('date');
       done();
     });
-
   });
 });
-

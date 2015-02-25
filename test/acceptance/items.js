@@ -3,8 +3,6 @@
 'use strict';
 
 var expect = require('chai').expect;
-var Item = require('../../server/models/item');
-var User = require('../../server/models/user');
 var Lab = require('lab');
 var lab = exports.lab = Lab.script();
 var describe = lab.describe;

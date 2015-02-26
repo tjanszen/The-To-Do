@@ -1,15 +1,52 @@
 extends ../../layouts/master
 block content
-  h3 To-Do-Items
-  each item in items
-    .row
-      .col-xs-12
-        div Id: #{item._id}
-        div Title: #{item.title}
-        div Due: #{item.due}
-        div Created At: #{item.createdAt}
-        div Priority: #{item.priority}
-        div is Completed: #{item.isCompleted}
-        each tag in item.tags
-          div Tags:
-            span= tag
+  h3 Ta-Do's
+  .container-fluid
+    .navbar-header
+      .nav
+        ul.pagination
+          li
+            a(href='/items?skip=' + additionMe(newSkip, -limit))
+              span &laquo;
+    .navbar-header
+      .nav.navbar-right
+        ul.pagination
+          li
+            a(href='/items?skip=' + additionMe(newSkip, limit))
+              span &raquo;
+      
+    .col-sm-offset-2.col-sm-8
+      table.table.table-hover
+        thead
+          tr
+            th
+              a(href='/items?sort=completed') Completed
+            th 
+              a(href='/items?sort=title') Name
+            th 
+              a(href='/items?sort=priority') Priority
+            th
+              a(href='/items?sort=tags') Tags
+            th 
+              a(href='items?sort=date') Due Date
+        tbody
+        each item in items
+          tr
+            form(method='post' action='/items/#{item._id}/toggle')
+              if item.isCompleted
+                td 
+                  button.btn.btn-default(type='submit')
+                    i.fa.fa-check-square-o
+              else
+                td
+                  button.btn.btn-default(type='submit')
+                    i.fa.fa-square-o
+            td #{item.title}
+            td 
+              a(href='/items?priority=' + item.priority)= item.priority
+            td #{item.tags}
+            td= moment(item.due).format('MMMM Do YYYY')
+
+          
+        
+ 

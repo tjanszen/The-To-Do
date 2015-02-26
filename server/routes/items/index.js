@@ -20,6 +20,7 @@ module.exports = {
 
     // var filter = _.merge(request.query, {userId:request.auth.credentials._id});
     Item.find(request.query).sort(sort).skip(newSkip).limit(limit).exec(function(err, items) {
+      console.log('***************SORT', sort);
       reply.view('templates/items/index', {items:items, moment:moment, additionMe:additionMe, skip:skip, limit:limit, newSkip:newSkip});
     });
   }
